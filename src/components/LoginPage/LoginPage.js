@@ -72,60 +72,57 @@ class LoginPage extends Component {
   }
 
   render() {
-  const { classes } = this.props
+    const { classes } = this.props
     return (
       <div>
         {this.renderAlert()}
-        
         <form onSubmit={this.login}>
           <div className="loginAndRegisterTitle">
-          <div>
-            <h1>Login Here</h1>
+            <div>
+              <h1>Login Here</h1>
             </div>
           </div>
           <div className="inputFieldsAndButtonsDiv">
-          <div className="inputFieldsDiv">
-          <div className="usernameInput">
-            <label htmlFor="username">
-              <i className="fas fa-user"></i>
-              <Input
-                className="inputFields"
-                placeholder="Username"
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChange}
-                style={{fontSize: 25}}
-              />
-            </label>
-          </div>
-          <div className="passwordInput">        
-            <label htmlFor="password">
-              <i class="fas fa-lock"></i>
-              <Input
-                className="inputFields"
-                placeholder="Password"
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                style={{fontSize: 25}}
-              />
-            </label>
+            <div className="inputFieldsDiv">
+              <div className="usernameInput">
+                <label htmlFor="username">
+                  <i className="fas fa-user"></i>
+                  <Input
+                    className="inputFields"
+                    placeholder="Username"
+                    type="text"
+                    name="username"
+                    value={this.state.username}
+                    onChange={this.handleInputChange}
+                    style={{ fontSize: 25 }}
+                  />
+                </label>
+              </div>
+              <div className="passwordInput">
+                <label htmlFor="password">
+                  <i className="fas fa-lock"></i>
+                  <Input
+                    className="inputFields"
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                    style={{ fontSize: 25 }}
+                  />
+                </label>
+              </div>
             </div>
-          </div>
-          
-          <div>
-            <div className="loginButton">
-              <Button className={classes.button} variant="contained" color="primary" onClick={this.login}>Login</Button>
+            <div>
+              <div className="loginButton">
+                <Button className={classes.button} variant="contained" color="primary" onClick={this.login}>Login</Button>
+              </div>
+              <div className="registerAndCancelButton">
+                <Button className={classes.button} variant="contained" color="default" ><Link to="/register" style={{ textDecoration: 'none' }}>Register</Link></Button>
+              </div>
             </div>
-            <div className="registerAndCancelButton">
-              <Button className={classes.button} variant="contained" color="default" ><Link to="/register" style={{ textDecoration: 'none' }}>Register</Link></Button>
-            </div>
-          </div>
           </div>
         </form>
-        
       </div>
     );
   }
