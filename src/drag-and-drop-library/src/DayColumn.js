@@ -379,27 +379,27 @@ class DaySlot extends React.Component {
                 onClose={this.handleClose}
                 className={classes.list}
               >
-                <MenuItem onClick={this.handleClose}><b>Contact info: </b> {title}, <a href="tel:{phone}">{phone}</a></MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Time of appointment: </b> {label}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Appointment date: </b> {date} </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Appointment type: </b> {appointmentType}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Shoot confirmed </b> <input type="checkbox" defaultChecked /> </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Address: </b> {appointmentAddress}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Square foot: </b> {squareFoot}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>How to access home: </b> {howToAccessHome} </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Number of bathrooms: </b> {numberOfBathrooms}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Number of bedrooms: </b> {numberOfBedrooms}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Pets:</b> {pets}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Photographer:</b> {resourceId}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Fireplace Enhancement:</b> {fireplaceEnhancement}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>TV Enhancement:</b> {tvScreenEnhancement}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Charged home enhancements:</b> {chargedHomeEnhancements}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Charged neighborhood enhancements:</b> {chargedNeighborhoodEnhancements}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Comments for condominium:</b> {condominiumComments}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Comments about property:</b> {propertyComments}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Amount paid:</b> {amountPaid}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Phone:</b> <a href="tel:{phone}">{phone}</a> </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Email:</b> {email} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Contact info: </b> {title}, <a href="tel:{phone}">{phone}</a></MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Time of appointment: </b> {label}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Appointment date: </b> {date} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Appointment type: </b> {appointmentType}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Shoot confirmed </b> <input type="checkbox" defaultChecked /> </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Address: </b> {appointmentAddress}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Square foot: </b> {squareFoot}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>How to access home: </b> {howToAccessHome} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Number of bathrooms: </b> {numberOfBathrooms}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Number of bedrooms: </b> {numberOfBedrooms}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Pets:</b> {pets}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Photographer:</b> {resourceId}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Fireplace Enhancement:</b> {fireplaceEnhancement}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>TV Enhancement:</b> {tvScreenEnhancement}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Charged home enhancements:</b> {chargedHomeEnhancements}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Charged neighborhood enhancements:</b> {chargedNeighborhoodEnhancements}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Comments for condominium:</b> {condominiumComments}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Comments about property:</b> {propertyComments}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Amount paid:</b> {amountPaid}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Phone:</b> <a href="tel:{phone}">{phone}</a> </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Email:</b> {email} </MenuItem>
               </Menu>
             </div>
           </div>
