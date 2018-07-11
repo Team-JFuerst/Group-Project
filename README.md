@@ -1,6 +1,6 @@
-# JFuerst
+# JFuerst Scheduling
 
-JFuerst is an application created to manage the schedule flow for JFuerst Real Estate Photography.
+JFuerst Scheduling is an application created to manage the schedule flow for JFuerst Real Estate Photography.
 
 ## Getting Started
 
