@@ -75,8 +75,6 @@ Copy and paste the suggested git command and enter it.
 11. Create a Herkoku mLab database.
 12. Add environment variables to the Heroku project as follows:
 `SERVER_SESSION_SECRET`
-`ACUITY_USER_ID`
-`ACUITY_API_KEY`
 `GOOGLE_API_KEY`
 Do not include the backticks ``.
 The server session secret should be a nice random string for security.
