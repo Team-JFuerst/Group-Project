@@ -1,17 +1,8 @@
-# Collaborators
+# JFuerst
 
-* Dylan Dorsey
-* Katie Mikul
-* Nathan Kean
-* Pa Yeng Thao
-* Sam Vanderlinden
+JFuerst is an application created to manage the schedule flow for JFuerst Real Estate Photography.
 
-# Express/Passport with React
-This version uses React to control the login requests and redirection in coordination with client-side routing.
-
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
-
-## Prerequisites
+## Getting Started
 
 Before you get started, make sure you have the following software installed on your computer:
 
@@ -21,13 +12,7 @@ Before you get started, make sure you have the following software installed on y
 
 ## Create database
 
-Create a new database called `prime_app` and a collection called `person`.
-
-## Download (Don't Clone) This Repository
-
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
+Create a new database called `jfuerst_scheduling` and a collection called `person`.
 
 ## Development Setup Instructions
 
@@ -36,11 +21,30 @@ Create a new database called `prime_app` and a collection called `person`.
     ```
     SERVER_SESSION_SECRET=superDuperSecret
     ```
+    ```
+    REACT_APP_API_KEY=Add your google API key here
+    ```
+    ```
+    GOOGLE_API_KEY=Add your google API key here
+    ```
+
     While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
+*    
 * Start mongo if not running already by using `mongod`
 * Run `npm run server`
 * Run `npm run client`
 * Navigate to `localhost:3000`
+
+
+## Collaborators
+
+* Dylan Dorsey
+* Katie Mikul
+* Nathan Kean
+* Pa Yeng Thao
+* Sam Vanderlinden
+
+
 
 ## Debugging
 
