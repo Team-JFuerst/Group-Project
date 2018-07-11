@@ -89,5 +89,5 @@ The other values are provided by the respective service, Acuity and Google, when
 * Dylan Dorsey
 * Katie Mikul
 * Nathan Kean
-* Pa Yeng Thao
 * Sam Vanderlinden
+* Pa Yeng Thao
