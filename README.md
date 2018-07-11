@@ -35,16 +35,6 @@ Create a new database called `jfuerst_scheduling` and a collection called `perso
 * Navigate to `localhost:3000`
 
 
-## Collaborators
-
-* Dylan Dorsey
-* Katie Mikul
-* Nathan Kean
-* Pa Yeng Thao
-* Sam Vanderlinden
-
-
-
 ## Debugging
 
 To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run dev:client`. Start the debugging server by selecting the Debug button.
@@ -55,11 +45,7 @@ Then make sure `Launch Program` is selected from the dropdown, then click the gr
 
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
 
-## Linting
 
-The Airbnb ESLint for react is a part of this project. If you would like to take advantage of this in VS Code, you can add the `ESLint` extension. Click the `Extensions` button (the button right below the `Debug`) and search for `ESLint`. Click `install` for the first result and then click `Reload`. Then it should be all set up!
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
 
 ## Production Build
 
@@ -69,19 +55,39 @@ Before pushing to Heroku, run `npm run build` in terminal. This will create a bu
 * Run `npm start`
 * Navigate to `localhost:5000`
 
-## Lay of the Land
-
-* `src/` contains the React application
-* `public/` contains static assets for the client-side
-* `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
-* `server/` contains the Express App
 
 ## Deployment
 
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Herkoku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
+1. Complete the "Prerequisites" and "Installing" sections of this ReadMe
+2. Create a separate git branch for deploying to heroku 
+3. In the project's .gitignore file, remove the build/ line -- we will want the build folder in heroku!
+4. Run a build locally. Enter in the terminal: `npm run build`.
+5. In the terminal type `git status` and check to see you have a red (untracked) build/ folder. 
+6. Add & Commit:
+Enter `git add .`, then `git commit -m "deploying to heroku (or some other appropriate comment here in quotes)"`
+7. Push:
+Enter `git push`.
+In the terminal, a suggested git command will appear to push to the correct target for your branch.
+Copy and paste the suggested git command and enter it.
+8. Repeat steps 4-7 in order every time you wish to re-deploy.
+9. Create a new Heroku project.
+10. Link the Heroku project to the project GitHub Repo.
+11. Create a Herkoku mLab database.
+12. Add environment variables to the Heroku project as follows:
+`SERVER_SESSION_SECRET`
+`ACUITY_USER_ID`
+`ACUITY_API_KEY`
+`GOOGLE_API_KEY`
+Do not include the backticks ``.
+The server session secret should be a nice random string for security.
+The other values are provided by the respective service, Acuity and Google, when you create accounts with them. Append those provided values.
+13. In the deploy section, select manual deploy.
+
+
+## Authors
+
+* Dylan Dorsey
+* Katie Mikul
+* Nathan Kean
+* Pa Yeng Thao
+* Sam Vanderlinden
