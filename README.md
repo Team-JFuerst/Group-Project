@@ -2,7 +2,7 @@
 
 JFuerst Scheduling is an application created to manage the schedule flow for JFuerst Real Estate Photography.
 
-## Getting Started
+## Prerequisites
 
 Before you get started, make sure you have the following software installed on your computer:
 
@@ -14,7 +14,7 @@ Before you get started, make sure you have the following software installed on y
 
 Create a new database called `jfuerst_scheduling` and a collection called `person`.
 
-## Development Setup Instructions
+## Installing
 
 * Run `npm install`
 * Create a `.env` file at the root of the project and paste the following lines into the file:
