@@ -17,7 +17,7 @@ Create a new database called `jfuerst_scheduling` and a collection called `perso
 ## Development Setup Instructions
 
 * Run `npm install`
-* Create a `.env` file at the root of the project and paste this line into the file:
+* Create a `.env` file at the root of the project and paste the following line into the file:
     ```
     SERVER_SESSION_SECRET=superDuperSecret
     ```
@@ -28,8 +28,7 @@ Create a new database called `jfuerst_scheduling` and a collection called `perso
     GOOGLE_API_KEY=Add your google API key here
     ```
 
-    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-*    
+    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning. 
 * Start mongo if not running already by using `mongod`
 * Run `npm run server`
 * Run `npm run client`
