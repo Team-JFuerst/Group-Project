@@ -17,7 +17,7 @@ Create a new database called `jfuerst_scheduling` and a collection called `perso
 ## Development Setup Instructions
 
 * Run `npm install`
-* Create a `.env` file at the root of the project and paste the following line into the file:
+* Create a `.env` file at the root of the project and paste the following lines into the file:
     ```
     SERVER_SESSION_SECRET=superDuperSecret
     ```
