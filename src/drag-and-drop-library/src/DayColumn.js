@@ -28,7 +28,7 @@ function startsAfter(date, max) {
 
 const styles = () => ({
   list: {
-    width: 335,
+    width: 600,
   },
   fullList: {
     width: 'auto',
@@ -257,32 +257,14 @@ class DaySlot extends React.Component {
       , startAccessor
       , endAccessor
       , titleAccessor
-      , patientNameAccessor
-      , clinicianImageAccessor
-      , clinicianNameAccessor
       , appointmentTypeAccessor
       , appointmentTimeAccessor
       , appointmentAddressAccessor
-      , coPayAccessor
-      , soapNoteTitleAccessor
-      , setProfileTitleAccessor
-      , staffsAccessor
-      , isRecurrenceAccessor
-      , isRecurrenceEditAccessor
-      , isEditAccessor
-      , isDeleteAccessor
-      , isCancelAccessor
-      , isUnCancelAccessor
-      , cancellationReasonAccessor
-      , isAppointmentRenderedAccessor
-      , isVideoCallAccessor
-      , isAppoinmentCancelledAccessor
       , phoneAccessor
       , emailAccessor
       , resourceIdAccessor
       , durationAccessor
       , dateAccessor
-      , formsAccessor
       , numberOfBathroomsAccessor
       , numberOfBedroomsAccessor
       , fireplaceEnhancementAccessor
@@ -315,33 +297,14 @@ class DaySlot extends React.Component {
       let title = get(event, titleAccessor)
 
       // @Appointment associate appointment data with the fields
-      let patientName = get(event, patientNameAccessor);
-      let clinicianImage = get(event, clinicianImageAccessor);
-      let clinicianName = get(event, clinicianNameAccessor);
       let appointmentType = get(event, appointmentTypeAccessor);
       let appointmentTime = get(event, appointmentTimeAccessor);
       let appointmentAddress = get(event, appointmentAddressAccessor);
-      let coPay = get(event, coPayAccessor);
-      let soapNoteTitle = get(event, soapNoteTitleAccessor);
-      let setProfileTitle = get(event, setProfileTitleAccessor);
-      let staffs = get(event, staffsAccessor);
-      let isRecurrence = get(event, isRecurrenceAccessor);
-      let isRecurrenceEdit = get(event, isRecurrenceEditAccessor);
-      let isEdit = get(event, isEditAccessor);
-      let isDelete = get(event, isDeleteAccessor);
-      let isCancel = get(event, isCancelAccessor);
-      let isUnCancel = get(event, isUnCancelAccessor);
-      let cancellationReason = get(event, cancellationReasonAccessor);
-      let isAppointmentRendered = get(event, isAppointmentRenderedAccessor);
-      let isVideoCall = get(event, isVideoCallAccessor);
-      let isAppoinmentCancelled = get(event, isAppoinmentCancelledAccessor);
-      let practitionerName = get(event, practitionerNameAccessor);
       let phone = get(event, phoneAccessor);
       let email = get(event, emailAccessor);
       let resourceId = get(event, resourceIdAccessor);
       let duration = get(event, durationAccessor);
       let date = get(event, dateAccessor);
-      let forms = get(event, formsAccessor);
       let numberOfBedrooms = get(event, numberOfBedroomsAccessor);
       let numberOfBathrooms = get(event, numberOfBathroomsAccessor);
       let fireplaceEnhancement = get(event, fireplaceEnhancementAccessor);
@@ -369,7 +332,7 @@ class DaySlot extends React.Component {
       let dayClass = this.props.view === 'day' ? 'colwrap' : '';
 
       if (eventPropGetter)
-        var { style: xStyle, className } = eventPropGetter(event, start, end, _isSelected,)
+        var { style: xStyle, className } = eventPropGetter(event, start, end, _isSelected)
 
       let { height, top, width, xOffset } = style
 
@@ -382,10 +345,7 @@ class DaySlot extends React.Component {
               top: `${top}%`,
               height: `${height}%`,
               [isRtl ? 'right' : 'left']: `${Math.max(0, xOffset)}%`,
-              width: `${width}%`,
-              // SET EVENT BACKGROUND COLOR BASED UPON EVENT KEY
-              backgroundColor: `${event.backgroundColor}`
-              // END SET EVENT BACKGROUND COLOR BASED UPON EVENT KEY
+              width: `${width}%`
             }}
             className={cn(`rbc-event ${dayClass}`, className, {
               'rbc-selected': _isSelected,
@@ -401,7 +361,7 @@ class DaySlot extends React.Component {
               <p>Square foot: {squareFoot} </p>
               <p className="phoneNumber">Phone: <a href="tel:{phone}" className="phoneNumber">{phone}</a></p>
               <p>Email: {email}</p>
-              <div >
+            
               <Button 
                 className="menuButton"
                 aria-owns={anchorEl ? 'simple-menu' + idx : null}
@@ -411,34 +371,35 @@ class DaySlot extends React.Component {
               >
                 <i className="fa fa-info-circle fa-2x" aria-hidden="true"></i>
                 </Button>
-                </div>
+              
               <Menu
                 id={'simple-menu' + idx}
                 anchorEl={anchorEl}
                 open={this.state.selectedItemId == idx}
                 onClose={this.handleClose}
+                className={classes.list}
               >
-                <MenuItem onClick={this.handleClose}><b>Contact info: </b> {title}, <a href="tel:{phone}">{phone}</a></MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Time of appointment: </b> {label}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Appointment date: </b> {date} </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Appointment type: </b> {appointmentType}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Shoot confirmed </b> <input type="checkbox" defaultChecked /> </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Address: </b> {appointmentAddress}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Square foot: </b> {squareFoot}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>How to access home: </b> {howToAccessHome} </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Number of bathrooms: </b> {numberOfBathrooms}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Number of bedrooms: </b> {numberOfBedrooms}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Pets:</b> {pets}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Photographer:</b> {resourceId}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Fireplace Enhancement:</b> {fireplaceEnhancement}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>TV Enhancement:</b> {tvScreenEnhancement}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Charged home enhancements:</b> {chargedHomeEnhancements}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Charged neighborhood enhancements:</b> {chargedNeighborhoodEnhancements}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Comments for condominium:</b> {condominiumComments}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Comments about property:</b> {propertyComments}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Ammount paid:</b> {amountPaid}</MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Phone:</b> <a href="tel:{phone}">{phone}</a> </MenuItem>
-                <MenuItem onClick={this.handleClose}><b>Email:</b> {email} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Contact info: </b> {title}, <a href="tel:{phone}">{phone}</a></MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Time of appointment: </b> {label}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Appointment date: </b> {date} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Appointment type: </b> {appointmentType}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Shoot confirmed </b> <input type="checkbox" defaultChecked /> </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Address: </b> {appointmentAddress}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Square foot: </b> {squareFoot}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>How to access home: </b> {howToAccessHome} </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Number of bathrooms: </b> {numberOfBathrooms}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Number of bedrooms: </b> {numberOfBedrooms}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Pets:</b> {pets}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Photographer:</b> {resourceId}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Fireplace Enhancement:</b> {fireplaceEnhancement}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>TV Enhancement:</b> {tvScreenEnhancement}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Charged home enhancements:</b> {chargedHomeEnhancements}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Charged neighborhood enhancements:</b> {chargedNeighborhoodEnhancements}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Comments for condominium:</b> {condominiumComments}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Comments about property:</b> {propertyComments}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Amount paid:</b> {amountPaid}</MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Phone:</b> <a href="tel:{phone}">{phone}</a> </MenuItem>
+                <MenuItem style={{overflow: 'scroll'}} onClick={this.handleClose}><b>Email:</b> {email} </MenuItem>
               </Menu>
             </div>
           </div>
